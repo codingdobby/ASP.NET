@@ -1,0 +1,243 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Mysite_1712124.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding|Noto+Sans+KR&display=swap" rel="stylesheet">
+    <title>메인 페이지</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 1000px;
+        }
+        .auto-style2 {
+            height: 20px;
+        }
+        .auto-style3 {
+            width: 200px;
+            
+        }
+        .auto-style4 {
+            height: 20px;
+            text-align: center;
+        }
+        .auto-style5 {
+            width: 100%;
+        }
+        .auto-style7 {
+            text-align: left;
+        }
+        .auto-style8 {
+            text-align: center;
+        }
+        .auto-style9 {
+            width: 800px;
+            height: 359px;
+        }
+
+        .underline {
+        text-decoration:none;
+        text-align:center;
+        color:black;
+        font-family: 'Noto Sans KR', sans-serif;
+       
+        }
+        .login {
+        width: 100%;
+    	display: block;
+	box-sizing: border-box;
+	background-color: #E8DAC3;
+	padding: 3px;
+	border: 1px solid #eeeeee;
+	border-radius: 3px;
+    font-family: 'Noto Sans KR', sans-serif;
+	font-size: 15pt;
+	outline: none;
+	color: black;
+	height:40px;
+	        
+        }
+        .memberWidth {
+        width:50%;
+        text-align:center;
+        
+        }
+        .panel2set {
+        width:200px;
+        text-align:center;
+        margin:0 auto;
+        
+        }
+      
+        .auto-style10 {
+            text-decoration: none;
+            text-align: center;
+            color: black;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: large;
+             margin-bottom:10px;
+        }
+        .auto-style11 {
+            font-size: large;
+        }
+        .space {
+        margin:10px;
+        
+        }
+        .linkbtn-center {
+        width:100%;
+        text-align:center;
+        font-size:15pt;
+        font-family: 'Noto Sans KR', sans-serif;
+        }
+        .textbox {
+        box-sizing: border-box;
+	font-size: 10pt;
+        font-family: 'Noto Sans KR', sans-serif;
+        }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+       
+            
+            <table align="center" class="auto-style1">
+                <tr>
+                    <td colspan="2" class="auto-style2">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/top_1000x245.jpg" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style3" style="text-align: left; vertical-align: top; background-color: #D6E5FF">
+                        <asp:Panel ID="Panel1" runat="server" Width="217px">
+                            <table class="auto-style5">
+                                <tr>
+                                    <td class="auto-style8" colspan="2">
+                                        <asp:TextBox ID="txtID" runat="server" placeholder="아이디" Width="90%" CssClass="textbox"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style8" colspan="2">
+                                        <asp:TextBox ID="txtPWD" runat="server" placeholder="비밀번호" TextMode="Password" Width="90%" CssClass="textbox"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td  colspan="2" >
+                                        <asp:Button ID="btnLogin" runat="server" CssClass="login" OnClick="btnLogin_Click" Text="로그인" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="memberWidth">
+                                        <asp:LinkButton ID="lnkRegister" runat="server" OnClick="lnkRegister_Click" CssClass="underline" PostBackUrl="~/member/Register.aspx">회원가입</asp:LinkButton>
+                                    </td>
+                                    <td class="memberWidth">
+                                        <asp:CheckBox ID="idsave" runat="server" Text="아이디저장" />
+                                    </td>
+                                </tr>
+                                
+                               
+                                
+                                <tr>
+                                    <td class="memberWidth">
+                                        <asp:LinkButton ID="findID" runat="server" CssClass="underline" PostBackUrl="~/member/FindId.aspx" >아이디 찾기</asp:LinkButton>
+                                    </td>
+                                    <td class="memberWidth">
+                                        <asp:LinkButton ID="findPWD" runat="server" CssClass="underline" PostBackUrl="~/member/FindPwd.aspx">비밀번호 찾기</asp:LinkButton>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="auto-style8" colspan="2">
+
+                                        <asp:Label ID="msg" runat="server" Font-Size="X-Large" ForeColor="#CC0000" Text="msg"></asp:Label>
+
+                                    </td>
+                                    
+                                    </tr>
+                                
+                            </table>
+                        </asp:Panel>
+                        <br />
+                        <table class="auto-style5">
+                            <tr>
+                                <td>
+                        <asp:Panel ID="Panel2" runat="server" BackColor="#EBB9B6" CssClass="panel2set">
+                            <span class="auto-style11">
+                            <br />
+                            아이디 : </span>
+                            <asp:Label ID="lblID" runat="server" Text="Label" CssClass="auto-style11"></asp:Label>
+                            <br />  <br  />
+                            <asp:LinkButton ID="LinkButton10" runat="server" CssClass="auto-style10" OnClick="LinkButton10_Click">회원정보변경</asp:LinkButton>
+                            <br  />
+                              <br  />
+                            <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" PostBackUrl="~/admin/AdminMain.aspx" CssClass="auto-style10">관리자페이지</asp:LinkButton>
+                           <p class="auto-style8">
+                               <asp:Button ID="Button2" runat="server" OnClick="Button1_Click" Text="로그아웃" CssClass="login" />
+                            </p>
+                        </asp:Panel>
+                        
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table class="linkbtn-center">
+                            <tr>
+                                <td>
+                        
+
+
+                        <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Default.aspx" CssClass="underline">홈으로</asp:LinkButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                        <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/board/Default.aspx" CssClass="underline">QnA게시판</asp:LinkButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                        <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/company/company_info.aspx" CssClass="underline">회사소개</asp:LinkButton>
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <br />
+                        
+                        <br />
+                        
+
+
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </td>
+                    <td style="text-align: left; vertical-align: top; " class="auto-style9">
+                        <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        
+                        
+                        
+                        
+                        </asp:ContentPlaceHolder>
+                        </div>
+                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4" colspan="2" style="background-color: #808080; font-size: medium;">Copyrigt (C) 2019 조민영(1712124)<br />
+                        울산광역시 동구 울산과학대학교 콤퓨타정보학부 소프트웨어개발전공 3학년</td>
+                </tr>
+            </table>
+       
+    </form>
+    <p class="auto-style7">
+        &nbsp;</p>
+</body>
+</html>
